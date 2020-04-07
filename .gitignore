@@ -5,7 +5,7 @@
 .DS_Store
 
 #Ignore __pycache__
-__pycache__
+__pycache__/
 
 #Ignore original_shots_data.csv
 original_shots_data.csv
