@@ -22,17 +22,17 @@ def game_seconds(period, clock):
     '''
     # First 4 periods are 12 min
     if period <= 4:
-        p_secs = period - 1
-        p_secs *= 720
+        p_secs = period * 720
     # OT periods are 5 min
     else:
-        ot = period - 5
+        ot = period - 4
         p_secs = 2880 + (ot * 300)
 
+    # Remove the time left in the period
     minsec = clock.split(':')
     c_secs = (int(minsec[0]) * 60) + int(minsec[1])
     
-    return p_secs + c_secs
+    return p_secs - c_secs
 
 def third():
     pass
