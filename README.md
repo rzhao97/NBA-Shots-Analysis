@@ -1,8 +1,8 @@
-<p align="justify">
-<img src="images/bricks.gif" width="250" height="100">
+<p align="right">
+<img src="images/bricks.gif" width="300" height="270">
 </p>
 
-# NBA Shots Analysis: Does defense cause bricks?
+# NBA Shots Analysis: Can defense cause bricks?
 **Ray Zhao**
 
 ### Table of Contents
@@ -98,21 +98,21 @@ In this dataset, there are 896 unique games with data on shots taken from 281 pl
 ## Plots
 
 <p align='center'>
-<img src="images/dribbletime.png" width="800" height="450"> 
+<img src="images/dribbletime.png"> 
 </p>
 
 
 
 <p align='center'>
-<img src="images/shotdisthist.png" width="900" height="400"> 
+<img src="images/shotdisthist.png"> 
 </p>
 
 <p align='center'>
-<img src="images/shotclockhist.png" width="900" height="400"> 
+<img src="images/shotclockhist.png"> 
 </p>
 
 <p align='center'>
-<img src="images/defdistscatter.png" width="900" height="400"> 
+<img src="images/defdistscatter.png"> 
 </p>
 
 
