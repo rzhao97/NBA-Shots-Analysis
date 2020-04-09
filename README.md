@@ -115,6 +115,11 @@ In this dataset, there are 896 unique games with data on shots taken from 281 pl
 <img src="images/defdistscatter.png"> 
 </p>
 
+<p align='center'>
+<img src="images/twothreedefdist.png"> 
+</p>
+
+
 
 <a name="testing"></a>
 ## Hypothesis Testing
