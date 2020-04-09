@@ -91,22 +91,22 @@ In this dataset, there are 896 unique games with data on shots taken from 281 pl
     * The defensive rustle player: Pau Gasol
     * Most shots resulting in a miss: Draymond Green
 
-**More Stuff:**
-* ...?
-
 <a name="plots"></a>
 ## Plots
 
+**Comparing the Number of Dribbles Against Time the Ball is Held**
 <p align='center'>
 <img src="images/dribblesvstouchtime.png"> 
 </p>
 The number of dribbles and the amount of time a player touchs the ball before a shot are both key factors in scoring the basketball. Players will use dribbles to try to get around their defenders or to create space for a better opportunity for a shot. As one can see in the histograms above, players do not hold and dribble the ball for two long before passing. Most the time, if a player has the ball they will dribble leading to a linear relationship between dribbles and touch time. According to the scatterplot, neither dribbles or touch time affect the shot outcome. There are a few points where the ball is held for a long time with a low number of dribbles caused by situations where the player purposely runs down the shot clock so the last shot of a period which are often the most difficult leading to more missed shots.
 
+**Number of Shots Taken Throughout the Shot Clock**
 <p align='center'>
 <img src="images/shotclockhist.png"> 
 </p>
 The shot clock is a 24 second countdown where one team has possession of the ball and resets if the possession of the ball is changed. In the two histograms above, the distribution of 2 point and 3 point shots are shown over the course of the shot clock counting down. Both distributions are relatively normal leading one to believe that most the time player choose to take the shot half through the shot clock which is common practice because they don't want to run out of time. Although shooting the ball early on is not encouraged by coachs, players will shoot the ball whenever they are open which leads to the peak of made shots in the 2 Point Clock Times. Those opportunities are created from steals or fast breaks, the players will get a shot with no defenders close by leading to a high percentage shot early in the shot clock. Other times the opposing team cause pressure causing a team to shot the ball with the shot clock closer to 0.
 
+**Number of 2 and 3 Point Shots Taken at All Distances**
 <p align='center'>
 <img src="images/shotdisthist.png"> 
 </p>
@@ -119,7 +119,7 @@ The shot clock is a 24 second countdown where one team has possession of the bal
 </p>
 The biggest difference between a shot taken in a NBA game and practice shot is that there are defenders. In both scatterplots above, there is a large amount of made shots where the closest defender is far away caused by steals or fast breaks. Disregarding the shots were the defender is really far, the shot distance appears to be an important factor in if the shot is made or missed while the made and missed shots are evenly distributed thoughout the countdown of the shot clock. Which concurs with what was seen the the previous histograms.
 
-
+**Shot Distance and Shot Clock Compared to Closest Defender Distance**
 <p align='center'>
 <img src="images/twothreedefdist.png"> 
 </p>
@@ -130,13 +130,13 @@ Looking at 2 and 3 point shots where the closest defender's distance was under 2
 <a name="testing"></a>
 ## Hypothesis Testing
 
-**The U-Test for 3 Point Shot Closest Defender Distance:**  
+###The U-Test for 3 Point Shot Closest Defender Distance:
 
 To test the hypothesis that closest defender distance is a factor in the 3 point shot outcome, we need to adopt a Null hypothesis.  The Null for the Mann–Whitney test is directly related to if a made or missed shot has a greater closest defender distance.
 
-> $H_0$: The distance of the closest defender for missed three point shots are equally likely to be higher than for made three point shots as the other way around; i.e., 
+**Null Hypothesis:** The distance of the closest defender for missed three point shots are equally likely to be higher than for made three point shots as the other way around; i.e., 
   
-  $$P(\text{ Missed Three Defender Distance} > \text{Made Three Defender Distance }) = 0.5$$
+P ( Missed Three Defender Distance} > \text{Made Three Defender Distance ) = 0.5
   
 As is usual, assuming this null hypothesis is true, the rank-sum statistic assumes a known distribution.   
 `stats.mannwhitneyu(madedefdist, missdefdist, alternative='greater')`  
