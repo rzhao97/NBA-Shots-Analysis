@@ -98,17 +98,18 @@ In this dataset, there are 896 unique games with data on shots taken from 281 pl
 ## Plots
 
 <p align='center'>
-<img src="images/dribbletime.png"> 
+<img src="images/dribblesvstouchtime.png"> 
 </p>
 
 
 
-<p align='center'>
-<img src="images/shotdisthist.png"> 
-</p>
 
 <p align='center'>
 <img src="images/shotclockhist.png"> 
+</p>
+
+<p align='center'>
+<img src="images/shotdisthist.png"> 
 </p>
 
 <p align='center'>
