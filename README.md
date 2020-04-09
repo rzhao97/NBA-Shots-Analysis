@@ -25,8 +25,7 @@ In the 2014-15 NBA Season, ...
 
 ### Motivation
 
-In basketball, offense is often considered more important than defense ...
-
+The goal for basketball is to win by making more shots and scoring more points than your opponent. The two biggest aspects of basketball are offense and defense, offense being the points your team scores and defense being the capability of stopping the opposing team from scoring. In the 2014-15 NBA season, let’s see if there was a difference in the distance of the closest defender in made and missed shots.
 
 <a name="data"></a>
 ## Data
@@ -97,39 +96,39 @@ In this dataset, there are 896 unique games with data on shots taken from 281 pl
 **Comparing the Number of Dribbles Against Time the Ball is Held:**
 <p align='center'>
 <img src="images/dribblesvstouchtime.png"> 
-</p>
-The number of dribbles and the amount of time a player touchs the ball before a shot are both key factors in scoring the basketball. Players will use dribbles to try to get around their defenders or to create space for a better opportunity for a shot. As one can see in the histograms above, players do not hold and dribble the ball for two long before passing. Most the time, if a player has the ball they will dribble leading to a linear relationship between dribbles and touch time. According to the scatterplot, neither dribbles or touch time affect the shot outcome. There are a few points where the ball is held for a long time with a low number of dribbles caused by situations where the player purposely runs down the shot clock so the last shot of a period which are often the most difficult leading to more missed shots.  
 
+The number of dribbles and the amount of time a player touchs the ball before a shot are both key factors in scoring the basketball. Players will use dribbles to try to get around their defenders or to create space for a better opportunity for a shot. As one can see in the histograms above, players do not hold and dribble the ball for two long before passing. Most the time, if a player has the ball they will dribble leading to a linear relationship between dribbles and touch time. According to the scatterplot, neither dribbles or touch time affect the shot outcome. There are a few points where the ball is held for a long time with a low number of dribbles caused by situations where the player purposely runs down the shot clock so the last shot of a period which are often the most difficult leading to more missed shots.  
+</p>
 
 **Number of Shots Taken Throughout the Shot Clock:**
 <p align='center'>
 <img src="images/shotclockhist.png"> 
-</p>
-The shot clock is a 24 second countdown where one team has possession of the ball and resets if the possession of the ball is changed. In the two histograms above, the distribution of 2 point and 3 point shots are shown over the course of the shot clock counting down. Both distributions are relatively normal leading one to believe that most the time player choose to take the shot half through the shot clock which is common practice because they don't want to run out of time. Although shooting the ball early on is not encouraged by coachs, players will shoot the ball whenever they are open which leads to the peak of made shots in the 2 Point Clock Times. Those opportunities are created from steals or fast breaks, the players will get a shot with no defenders close by leading to a high percentage shot early in the shot clock. Other times the opposing team cause pressure causing a team to shot the ball with the shot clock closer to 0.  
 
+The shot clock is a 24 second countdown where one team has possession of the ball and resets if the possession of the ball is changed. In the two histograms above, the distribution of 2 point and 3 point shots are shown over the course of the shot clock counting down. Both distributions are relatively normal leading one to believe that most the time player choose to take the shot half through the shot clock which is common practice because they don't want to run out of time. Although shooting the ball early on is not encouraged by coachs, players will shoot the ball whenever they are open which leads to the peak of made shots in the 2 Point Clock Times. Those opportunities are created from steals or fast breaks, the players will get a shot with no defenders close by leading to a high percentage shot early in the shot clock. Other times the opposing team cause pressure causing a team to shot the ball with the shot clock closer to 0.  
+</p>
 
 **Number of 2 and 3 Point Shots Taken at All Distances:**
 <p align='center'>
 <img src="images/shotdisthist.png"> 
-</p>
+
 2 point shots comprise of the majority of the shots taken because they are closer in shot distance resulting in a higher field goal percentage. The shots taken in the 0-5 ft distance is the only area where there are more made shots than missed. Players will often try to take the closest shot possibly but sometimes that isn't possible leading to them to take the "midrange shot". The midrange shot the second peak ranging from 15-20 ft.
 
 3 point shots are shots taken from a longer distance. The 3 point line on a NBA basketball court is a semicircle with the basket in the middle of the flat side. There are two set distances for a 3 point shot, the majority of the 3 point line is 23.75 ft away from the basket while the corners are flattened to be 22 ft away. This is why the 3 Point Shot Distances have two peaks.  
-
+</p>
 
 **Shot Distance and Shot Clock Compared to Closest Defender Distance:**
 <p align='center'>
 <img src="images/defdistscatter.png"> 
-</p>
-The biggest difference between a shot taken in a NBA game and practice shot is that there are defenders. In both scatterplots above, there is a large amount of made shots where the closest defender is far away caused by steals or fast breaks. Disregarding the shots were the defender is really far, the shot distance appears to be an important factor in if the shot is made or missed while the made and missed shots are evenly distributed thoughout the countdown of the shot clock. Which concurs with what was seen the the previous histograms.  
 
+The biggest difference between a shot taken in a NBA game and practice shot is that there are defenders. In both scatterplots above, there is a large amount of made shots where the closest defender is far away caused by steals or fast breaks. Disregarding the shots were the defender is really far, the shot distance appears to be an important factor in if the shot is made or missed while the made and missed shots are evenly distributed thoughout the countdown of the shot clock. Which concurs with what was seen the the previous histograms.  
+</p>
 
 **2 and 3 Point Shots' Closest Defender Distances:**
 <p align='center'>
 <img src="images/twothreedefdist.png"> 
-</p>
-Looking at 2 and 3 point shots where the closest defender's distance was under 20 feet, it seems like for 2 point shots the smaller the distance of the closest defender the more likely the shot is to be missed. As the closest defender's distance increases, the number of made shots in this datasets either come very close or even overtake the missed shots. On the other hand in the 3 point shot histogram, the same conclusion cannot be drawn as easily. The distribution for made and missed shots are very similar.  
 
+Looking at 2 and 3 point shots where the closest defender's distance was under 20 feet, it seems like for 2 point shots the smaller the distance of the closest defender the more likely the shot is to be missed. As the closest defender's distance increases, the number of made shots in this datasets either come very close or even overtake the missed shots. On the other hand in the 3 point shot histogram, the same conclusion cannot be drawn as easily. The distribution for made and missed shots are very similar.  
+</p>
 
 <a name="testing"></a>
 ## Hypothesis Testing
