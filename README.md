@@ -100,35 +100,60 @@ In this dataset, there are 896 unique games with data on shots taken from 281 pl
 <p align='center'>
 <img src="images/dribblesvstouchtime.png"> 
 </p>
-
-
-
+The number of dribbles and the amount of time a player touchs the ball before a shot are both key factors in scoring the basketball. Players will use dribbles to try to get around their defenders or to create space for a better opportunity for a shot. As one can see in the histograms above, players do not hold and dribble the ball for two long before passing. Most the time, if a player has the ball they will dribble leading to a linear relationship between dribbles and touch time. According to the scatterplot, neither dribbles or touch time affect the shot outcome. There are a few points where the ball is held for a long time with a low number of dribbles caused by situations where the player purposely runs down the shot clock so the last shot of a period which are often the most difficult leading to more missed shots.
 
 <p align='center'>
 <img src="images/shotclockhist.png"> 
 </p>
+The shot clock is a 24 second countdown where one team has possession of the ball and resets if the possession of the ball is changed. In the two histograms above, the distribution of 2 point and 3 point shots are shown over the course of the shot clock counting down. Both distributions are relatively normal leading one to believe that most the time player choose to take the shot half through the shot clock which is common practice because they don't want to run out of time. Although shooting the ball early on is not encouraged by coachs, players will shoot the ball whenever they are open which leads to the peak of made shots in the 2 Point Clock Times. Those opportunities are created from steals or fast breaks, the players will get a shot with no defenders close by leading to a high percentage shot early in the shot clock. Other times the opposing team cause pressure causing a team to shot the ball with the shot clock closer to 0.
 
 <p align='center'>
 <img src="images/shotdisthist.png"> 
 </p>
+2 point shots comprise of the majority of the shots taken because they are closer in shot distance resulting in a higher field goal percentage. The shots taken in the 0-5 ft distance is the only area where there are more made shots than missed. Players will often try to take the closest shot possibly but sometimes that isn't possible leading to them to take the "midrange shot". The midrange shot the second peak ranging from 15-20 ft.
+
+3 point shots are shots taken from a longer distance. The 3 point line on a NBA basketball court is a semicircle with the basket in the middle of the flat side. There are two set distances for a 3 point shot, the majority of the 3 point line is 23.75 ft away from the basket while the corners are flattened to be 22 ft away. This is why the 3 Point Shot Distances have two peaks.
 
 <p align='center'>
 <img src="images/defdistscatter.png"> 
 </p>
+The biggest difference between a shot taken in a NBA game and practice shot is that there are defenders. In both scatterplots above, there is a large amount of made shots where the closest defender is far away caused by steals or fast breaks. Disregarding the shots were the defender is really far, the shot distance appears to be an important factor in if the shot is made or missed while the made and missed shots are evenly distributed thoughout the countdown of the shot clock. Which concurs with what was seen the the previous histograms.
+
 
 <p align='center'>
 <img src="images/twothreedefdist.png"> 
 </p>
+Looking at 2 and 3 point shots where the closest defender's distance was under 20 feet, it seems like for 2 point shots the smaller the distance of the closest defender the more likely the shot is to be missed. As the closest defender's distance increases, the number of made shots in this datasets either come very close or even overtake the missed shots. On the other hand in the 3 point shot histogram, the same conclusion cannot be drawn as easily. The distribution for made and missed shots are very similar.
 
 
 
 <a name="testing"></a>
 ## Hypothesis Testing
 
-...
+**The U-Test for 3 Point Shot Closest Defender Distance:**  
+
+To test the hypothesis that closest defender distance is a factor in the 3 point shot outcome, we need to adopt a Null hypothesis.  The Null for the Mann–Whitney test is directly related to if a made or missed shot has a greater closest defender distance.
+
+> $H_0$: The distance of the closest defender for missed three point shots are equally likely to be higher than for made three point shots as the other way around; i.e., 
+  
+  $$P(\text{ Missed Three Defender Distance} > \text{Made Three Defender Distance }) = 0.5$$
+  
+As is usual, assuming this null hypothesis is true, the rank-sum statistic assumes a known distribution.   
+`stats.mannwhitneyu(madedefdist, missdefdist, alternative='greater')`  
+from the scipy stats package was run to find the p-value.
+
+**p-value for missed def dist > made def dist was 5.2e-32.**  
+The closest defender distance for a made shot is clearly greater than for a missed shot.
 
 
 <a name="conclusion"></a>
 ## Conclusion
 
-...
+What did you learn about your data?
+
+What did you learn about data science?
+
+What advice would you give yourself?
+
+Do you want to continue with this topic?
+
