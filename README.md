@@ -17,11 +17,7 @@
 <a name="description"></a>
 ## Project Description
 
-In the 2014-15 NBA Season, there were many shots taken throughout various games. What aspects affect the shot outcome?  
-
-### Motivation
-
-The goal for basketball is to win by making more shots and scoring more points than your opponent. The two biggest aspects of basketball are offense and defense, offense being the points your team scores and defense being the capability of stopping the opposing team from scoring. In the 2014-15 NBA season, let’s see if there was a difference in the distance of the closest defender in made and missed shots.
+In the 2014-15 NBA Season, there were many shots taken throughout various games. What shot characteristics affect the shot outcome? The goal for basketball is to win by making more shots and scoring more points than your opponent. The two biggest aspects of basketball are offense and defense, offense being the points your team scores and defense being the capability of stopping the opposing team from scoring. In the 2014-15 NBA season, let’s see if there was a difference in the distance of the closest defender in made and missed shots.
 
 <a name="data"></a>
 ## Data
@@ -126,8 +122,7 @@ The biggest difference between a shot taken in a NBA game and practice shot is t
 
 The two histograms about look at 2 and 3 point shots where the closest defender's distance was under 20 feet (removing 152 shots). For 2 point shots most the time the defenders are within 4 ft of the shooter, while for 3 point shots the defenders are around 5 ft.
     
-    Looking at the 2 point shot count, it seems that the smaller the distance of the closest defender the more likely the shot is to be missed. As the closest defender's distance increases, the number of made 2 point shots in this datasets either come very close or even overtake the missed shots. On the other hand in the 3 point shot histogram, although the proportion of made to missed shots looks higher when the closest defender distance is lower, the same conclusion cannot be drawn as easily. 
-    To prove that for both 2 and 3 point shots, the closest defender distance for made shots is greater than for missed shots, two seperate Mann-Whitney signed rank test will be run.
+Looking at the 2 point shot count, it seems that the smaller the distance of the closest defender the more likely the shot is to be missed. As the closest defender's distance increases, the number of made 2 point shots in this datasets either come very close or even overtake the missed shots. On the other hand in the 3 point shot histogram, although the proportion of made to missed shots looks higher when the closest defender distance is lower, the same conclusion cannot be drawn as easily. To prove that for both 2 and 3 point shots, the closest defender distance for made shots is greater than for missed shots, two seperate Mann-Whitney signed rank test will be run.
 </p>
 
 <a name="testing"></a>
@@ -139,26 +134,35 @@ To test the hypothesis that closest defender distance for a made 2 or 3 point sh
 
 **Null Hypothesis:** The distance of the closest defender for missed 2 or 3 point shots are equally likely to be higher than for made shots as the other way around; i.e., 
   
-P ( Missed Two Defender Distance} > Made Two Defender Distance ) = 0.5
-P ( Missed Three Defender Distance} > Made Three Defender Distance ) = 0.5
+P ( Closest Defender Distance for Missed 2 > Closest Defender Distance for Made 2 ) = 0.5  
+P ( Closest Defender Distance for Missed 3 > Closest Defender Distance for Made 3 ) = 0.5  
   
-Assuming this null hypothesis is true, the rank-sum statistic assumes a known distribution.   
-From the scipy stats package, a Mann-Whitney u-test was run to find the p-values:  
+Assuming this null hypothesis is true, the rank-sum statistic assumes a known distribution (in this case a skewed normal distribution). The Mann-Whitney u-test compares the number of times a score from one sample is greater than the score from the second sample to determine ranks to test the null hypothesis. 
+
+The sample sizes for these two tests is as followed (in the case the sample sizes are different, the Mann-Whitney u-test will match up the existing pairs):
+| Sample                                        | Sample Size |
+|-----------------------------------------------|:-----------:|
+| Missed 2 Closest Defender Distance (miss2CDD) |    43611    |
+| Made 2 Closest Defender Distance (made2CDD)   |    41174    |
+|-----------------------------------------------|:-----------:|
+| Missed 3 Closest Defender Distance (miss3CDD) |    19352    |
+| Made 3 Closest Defender Distance (made3CDD)   |    10940    |
+
+Using the scipy stats package, a Mann-Whitney u-test was run to find the p-values:  
 `stats.mannwhitneyu(made2CDD, miss2CDD, alternative='greater')`  
 `stats.mannwhitneyu(made3CDD, miss3CDD, alternative='greater')`  
 
 **p-value for missed 2 def dist > made 2 def dist was 4.2e-32.**  
-The closest defender distance for a made 2 point shot is clearly greater than for a missed shot.
-
 **p-value for missed 3 def dist > made 3 def dist was 5.2e-32.**  
-The closest defender distance for a made 3 point shot is clearly greater than for a missed shot.
 
+Both p-values 4.2e-32 and 5.2e-32 are statistically significant because they below 0.05. The incredibly low p-values provide very strong evidence that null hypothesis should be rejected. Rejecting the null hypotheses conveys that for both 2 and 3 point shots, the closest defender distance a made shot is clearly greater than for a missed shot.
 
 <a name="conclusion"></a>
 ## Conclusion
 
-What did you learn about your data?
-    In the 2014-15 NBA season leading up to March, the closest defender distance for made shots was greater than for missed shots. As well in that year, the ratio of 2 and 3 point shots was about 3:1 which is no longer the case since the NBA is going through a 3 point revolution. The league average for a made 2 point shot is 48.6% and 36.1% for a made 3 point shot meaning that 3 point shots ultimately can result in more points per possession. Although 2 point shots will never disappear since it's shown that when the shot distance is low and the closest defender distance is far, the shot is most likely made.  
+What did you learn about your data?  
+
+In the 2014-15 NBA season leading up to March, the closest defender distance for made shots was greater than for missed shots. As well in that year, the ratio of 2 and 3 point shots was about 3:1 which is no longer the case since the NBA is going through a 3 point revolution. The league average for a made 2 point shot is 48.6% and 36.1% for a made 3 point shot meaning that 3 point shots ultimately can result in more points per possession. Although 2 point shots will never disappear since it's shown that when the shot distance is low and the closest defender distance is far, the shot is most likely made.  
 
 What did you learn about data science?
 
@@ -166,3 +170,6 @@ What advice would you give yourself?
 
 Do you want to continue with this topic?
 
+<p align="left">
+<img src="images/backboardgif.gif" width="300" height="270">
+</p>
