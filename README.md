@@ -134,8 +134,8 @@ To test the hypothesis that the closest defender distance for a made 2 or 3 poin
 
 **Null Hypothesis:** The distance of the closest defender for missed 2 or 3 point shots are equally likely to be higher than for made shots as the other way around, i.e. 
   
-P( Closest Defender Distance for Missed 2 > Closest Defender Distance for Made 2 ) = 0.5  
-P( Closest Defender Distance for Missed 3 > Closest Defender Distance for Made 3 ) = 0.5  
+**P( Closest Defender Distance for Missed 2 > Closest Defender Distance for Made 2 ) = 0.5**  
+**P( Closest Defender Distance for Missed 3 > Closest Defender Distance for Made 3 ) = 0.5**  
   
 Assuming this null hypothesis is true, the rank-sum statistic assumes a known distribution (in this case a skewed normal distribution). The Mann-Whitney u-test compares the number of times a score from one sample is greater than the score from the second sample to determine ranks to test the null hypothesis.  
 
