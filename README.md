@@ -82,7 +82,7 @@ In this dataset, there are 896 unique games with data on shots taken from 281 pl
 * Lowest Shot Making Percentage (FG%):
    * Below 200 shots: Mike Miller with 30.8%
    * Above 200 shots: Ramon Sessions with 34.1%
-* “Best/Worse Defender”: Most Occurences of being 4 ft away from the shot
+* “Best/Worse Defender”: Most occurences of being 4 ft away from the shot
    * Most defended shots resulting in a missed shot: Draymond Green
    * Most defended shots resulting in a made shot: Paul Millsap
 
