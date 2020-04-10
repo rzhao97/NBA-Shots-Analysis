@@ -7,21 +7,17 @@
 
 ### Table of Contents
 
-* [Overview](#overview)
-    * [Project Description](#description)
-    * [Motivation](#Motivation)
+* [Project Description](#description)
 * [Data](#data)
 * [Analysis](#analysis)
 * [Plots](#plots)
 * [Hypothesis Testing](#testing)
 * [Conclusion](#conclusion)
 
-<a name="overview"></a>
-## Overview
+<a name="description"></a>
+## Project Description
 
-### Project Description
-
-In the 2014-15 NBA Season, ...
+In the 2014-15 NBA Season, there were many shots taken throughout various games. What aspects affect the shot outcome?  
 
 ### Motivation
 
@@ -30,11 +26,11 @@ The goal for basketball is to win by making more shots and scoring more points t
 <a name="data"></a>
 ## Data
 
-**Source:**
+#### Source:
 * Original CSV dataset obtained from [Kaggle](https://www.kaggle.com/dansbecker/nba-shot-logs). 
 * Dataset consists of details on all shots taken in the 2014-15 NBA regular season from October to March
 
-**Pipeline:**
+#### Pipeline:
 * Dataset imported using Pandas CSV read.
 * Removed rows containing missing information i.e. null values.
 * Removed unnecessary features
@@ -43,7 +39,7 @@ The goal for basketball is to win by making more shots and scoring more points t
     * Incorrectly recorded 2 and 3 point shots (where shot distance did not match point type)
 * Converted game clock string into total seconds passed
 
-**Cleaned Data:**
+#### Cleaned Data:
 * Dataset contains 115,235 rows and 15 features
 
 | Features Name    | Description                                                           | Datatype |
@@ -72,42 +68,43 @@ The goal for basketball is to win by making more shots and scoring more points t
 
 In this dataset, there are 896 unique games with data on shots taken from 281 players. Of the total 115,235 shots, 73.7% are 2 point shots while 26.3% are 3 point shots showing how in the 2014-15 NBA season 2 point shots were the majority of shots taken.
 
-|                | Total Shots   |   2 Point Shots   |  3 Point Shots |
-|:---------------|:-------------:|:-----------------:|:--------------:|
-| Count          | 115,235       |       84,877      |         30,358 |
-| % Made         | 44.3          | 48.6              | 36.1           |
-| % Missed       | 53.4          | 51.4              | 63.9           |
-| Most Taken By  | James Harden  | Lamarcus Aldrigde |  Stephen Curry |
-| Most Made By   | Stephen Curry |   Nikola Vucevic  |  Stephen Curry |
-| Most Missed By | James Harden  | Lamarcus Aldridge | Damian Lillard |
+|                  | Total Shots   |   2 Point Shots   |  3 Point Shots |
+|:-----------------|:-------------:|:-----------------:|:--------------:|
+| Count            | 115,235       | 84,877            | 30,358         |
+| % Made           | 44.3          | 48.6              | 36.1           |
+| % Missed         | 53.4          | 51.4              | 63.9           |
+| Most Taken By    | James Harden  | Lamarcus Aldrigde | Stephen Curry  |
+| Most Made By     | Stephen Curry | Nikola Vucevic    | Stephen Curry  |
+| Most Missed By   | James Harden  | Lamarcus Aldridge | Damian Lillard |
+| Most Defended By | Pau Gasol     | Pau Gasol         | Chris Paul     |
 
 **Fun Facts:**
 * Most Taken/Made Shots with shot clock under 4 seconds: Lebron James
 * Most Shots Taken in One Game: Russell Westbrook with 37 shots
 * Most Dribbles before a shot: Mo Williams with 32 dribbles
 * Highest Shot Making Percentage (FG%): Deandre Jordan with 72.8%
-* “Best Defender”: Most Occurences of being 4 ft away from the shot
-    * The defensive rustle player: Pau Gasol
-    * Most shots resulting in a miss: Draymond Green
+* “Best/Worse Defender”: Most Occurences of being 4 ft away from the shot
+    * Most defended shots resulting in a missed shot: Draymond Green
+    * Most defended shots resulting in a made shot: Paul Millsap
 
 <a name="plots"></a>
 ## Plots
 
-**Comparing the Number of Dribbles Against Time the Ball is Held:**
+#### Comparing the Number of Dribbles Against Time the Ball is Held:
 <p align='center'>
 <img src="images/dribblesvstouchtime.png"> 
 
 The number of dribbles and the amount of time a player touchs the ball before a shot are both key factors in scoring the basketball. Players will use dribbles to try to get around their defenders or to create space for a better opportunity for a shot. As one can see in the histograms above, players do not hold and dribble the ball for two long before passing. Most the time, if a player has the ball they will dribble leading to a linear relationship between dribbles and touch time. According to the scatterplot, neither dribbles or touch time affect the shot outcome. There are a few points where the ball is held for a long time with a low number of dribbles caused by situations where the player purposely runs down the shot clock so the last shot of a period which are often the most difficult leading to more missed shots.  
 </p>
 
-**Number of Shots Taken Throughout the Shot Clock:**
+#### Number of Shots Taken Throughout the Shot Clock:
 <p align='center'>
 <img src="images/shotclockhist.png"> 
 
 The shot clock is a 24 second countdown where one team has possession of the ball and resets if the possession of the ball is changed. In the two histograms above, the distribution of 2 point and 3 point shots are shown over the course of the shot clock counting down. Both distributions are relatively normal leading one to believe that most the time player choose to take the shot half through the shot clock which is common practice because they don't want to run out of time. Although shooting the ball early on is not encouraged by coachs, players will shoot the ball whenever they are open which leads to the peak of made shots in the 2 Point Clock Times. Those opportunities are created from steals or fast breaks, the players will get a shot with no defenders close by leading to a high percentage shot early in the shot clock. Other times the opposing team cause pressure causing a team to shot the ball with the shot clock closer to 0.  
 </p>
 
-**Number of 2 and 3 Point Shots Taken at All Distances:**
+#### Number of 2 and 3 Point Shots Taken at All Distances:
 <p align='center'>
 <img src="images/shotdisthist.png"> 
 
@@ -116,43 +113,52 @@ The shot clock is a 24 second countdown where one team has possession of the bal
 3 point shots are shots taken from a longer distance. The 3 point line on a NBA basketball court is a semicircle with the basket in the middle of the flat side. There are two set distances for a 3 point shot, the majority of the 3 point line is 23.75 ft away from the basket while the corners are flattened to be 22 ft away. This is why the 3 Point Shot Distances have two peaks.  
 </p>
 
-**Shot Distance and Shot Clock Compared to Closest Defender Distance:**
+#### Shot Distance and Shot Clock Compared to Closest Defender Distance:
 <p align='center'>
 <img src="images/defdistscatter.png"> 
 
 The biggest difference between a shot taken in a NBA game and practice shot is that there are defenders. In both scatterplots above, there is a large amount of made shots where the closest defender is far away caused by steals or fast breaks. Disregarding the shots were the defender is really far, the shot distance appears to be an important factor in if the shot is made or missed while the made and missed shots are evenly distributed thoughout the countdown of the shot clock. Which concurs with what was seen the the previous histograms.  
 </p>
 
-**2 and 3 Point Shots' Closest Defender Distances:**
+#### 2 and 3 Point Shots' Closest Defender Distances:
 <p align='center'>
 <img src="images/twothreedefdist.png"> 
 
-Looking at 2 and 3 point shots where the closest defender's distance was under 20 feet, it seems like for 2 point shots the smaller the distance of the closest defender the more likely the shot is to be missed. As the closest defender's distance increases, the number of made shots in this datasets either come very close or even overtake the missed shots. On the other hand in the 3 point shot histogram, the same conclusion cannot be drawn as easily. The distribution for made and missed shots are very similar.  
+The two histograms about look at 2 and 3 point shots where the closest defender's distance was under 20 feet (removing 152 shots). For 2 point shots most the time the defenders are within 4 ft of the shooter, while for 3 point shots the defenders are around 5 ft.
+    
+    Looking at the 2 point shot count, it seems that the smaller the distance of the closest defender the more likely the shot is to be missed. As the closest defender's distance increases, the number of made 2 point shots in this datasets either come very close or even overtake the missed shots. On the other hand in the 3 point shot histogram, although the proportion of made to missed shots looks higher when the closest defender distance is lower, the same conclusion cannot be drawn as easily. 
+    To prove that for both 2 and 3 point shots, the closest defender distance for made shots is greater than for missed shots, two seperate Mann-Whitney signed rank test will be run.
 </p>
 
 <a name="testing"></a>
 ## Hypothesis Testing
 
-### The U-Test for 3 Point Shot Closest Defender Distance:
+### The U-Test for the 2 and 3 Point Shot Closest Defender Distance:
 
-To test the hypothesis that closest defender distance is a factor in the 3 point shot outcome, we need to adopt a Null hypothesis.  The Null for the Mann–Whitney test is directly related to if a made or missed shot has a greater closest defender distance.
+To test the hypothesis that closest defender distance for a made 2 or 3 point shot is greater than for a missed shot, a Null hypothesis or skeptic stance was adopted for each test. The Null for the Mann–Whitney u-test is directly related to if a made or missed shot has a greater closest defender distance.
 
-**Null Hypothesis:** The distance of the closest defender for missed three point shots are equally likely to be higher than for made three point shots as the other way around; i.e., 
+**Null Hypothesis:** The distance of the closest defender for missed 2 or 3 point shots are equally likely to be higher than for made shots as the other way around; i.e., 
   
+P ( Missed Two Defender Distance} > Made Two Defender Distance ) = 0.5
 P ( Missed Three Defender Distance} > Made Three Defender Distance ) = 0.5
   
-As is usual, assuming this null hypothesis is true, the rank-sum statistic assumes a known distribution.   
-`stats.mannwhitneyu(madedefdist, missdefdist, alternative='greater')`  
-from the scipy stats package was run to find the p-value.
+Assuming this null hypothesis is true, the rank-sum statistic assumes a known distribution.   
+From the scipy stats package, a Mann-Whitney u-test was run to find the p-values:  
+`stats.mannwhitneyu(made2CDD, miss2CDD, alternative='greater')`  
+`stats.mannwhitneyu(made3CDD, miss3CDD, alternative='greater')`  
 
-**p-value for missed def dist > made def dist was 5.2e-32.**  
-The closest defender distance for a made shot is clearly greater than for a missed shot.
+**p-value for missed 2 def dist > made 2 def dist was 4.2e-32.**  
+The closest defender distance for a made 2 point shot is clearly greater than for a missed shot.
+
+**p-value for missed 3 def dist > made 3 def dist was 5.2e-32.**  
+The closest defender distance for a made 3 point shot is clearly greater than for a missed shot.
 
 
 <a name="conclusion"></a>
 ## Conclusion
 
 What did you learn about your data?
+    In the 2014-15 NBA season leading up to March, the closest defender distance for made shots was greater than for missed shots. As well in that year, the ratio of 2 and 3 point shots was about 3:1 which is no longer the case since the NBA is going through a 3 point revolution. The league average for a made 2 point shot is 48.6% and 36.1% for a made 3 point shot meaning that 3 point shots ultimately can result in more points per possession. Although 2 point shots will never disappear since it's shown that when the shot distance is low and the closest defender distance is far, the shot is most likely made.  
 
 What did you learn about data science?
 
