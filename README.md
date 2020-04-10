@@ -64,24 +64,27 @@ In the 2014-15 NBA Season, there were many shots taken throughout the various ga
 
 In this dataset, there are 896 unique games with data on shots taken from 281 players. Of the total 115,235 shots, 73.7% are 2 point shots while 26.3% are 3 point shots showing how in the 2014-15 NBA season 2 point shots were the majority of shots taken.
 
-|                  | Total Shots   |   2 Point Shots   |  3 Point Shots |
-|:-----------------|:-------------:|:-----------------:|:--------------:|
-| Count            | 115,235       | 84,877            | 30,358         |
-| % Made           | 44.3          | 48.6              | 36.1           |
-| % Missed         | 53.4          | 51.4              | 63.9           |
-| Most Taken By    | James Harden  | Lamarcus Aldrigde | Stephen Curry  |
-| Most Made By     | Stephen Curry | Nikola Vucevic    | Stephen Curry  |
-| Most Missed By   | James Harden  | Lamarcus Aldridge | Damian Lillard |
-| Most Defended By | Pau Gasol     | Pau Gasol         | Chris Paul     |
+|                  | Total Shots         |   2 Point Shots         |  3 Point Shots       |
+|:-----------------|:-------------------:|:-----------------------:|:--------------------:|
+| Count            | 115,235             | 84,877                  | 30,358               |
+| % Made           | 44.3                | 48.6                    | 36.1                 |
+| % Missed         | 53.4                | 51.4                    | 63.9                 |
+| Most Taken By    | James Harden (985)  | Lamarcus Aldrigde (884) | Stephen Curry (425)  |
+| Most Made By     | Stephen Curry (454) | Nikola Vucevic (419)    | Stephen Curry (181)  |
+| Most Missed By   | James Harden (542)  | Lamarcus Aldridge (493) | Damian Lillard (260) |
+| Most Defended By | Serge Ibaka (751)   | DeAndre Jordan (666)    | Monta Ellis (228)    |
 
 **Fun Facts:**
 * Most Taken/Made Shots with the shot clock under 4 seconds: Lebron James
 * Most Shots Taken in One Game: Russell Westbrook with 37 shots
 * Most Dribbles before a shot: Mo Williams with 32 dribbles
 * Highest Shot Making Percentage (FG%): Deandre Jordan with 72.8%
+* Lowest Shot Making Percentage (FG%):
+   * Below 200 shots: Mike Miller with 30.8%
+   * Above 200 shots: Ramon Sessions with 34.1%
 * “Best/Worse Defender”: Most Occurences of being 4 ft away from the shot
-    * Most defended shots resulting in a missed shot: Draymond Green
-    * Most defended shots resulting in a made shot: Paul Millsap
+   * Most defended shots resulting in a missed shot: Draymond Green
+   * Most defended shots resulting in a made shot: Paul Millsap
 
 <a name="plots"></a>
 ## Plots
