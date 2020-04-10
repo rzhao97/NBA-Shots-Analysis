@@ -151,8 +151,8 @@ The sample sizes for these two tests is as followed (in the case the sample size
 | Closest Defender Distance for Made 3 (made3CDD)   |    10940    |
 
 Using the scipy stats package, a Mann-Whitney u-test was run to find the p-values:  
-`stats.mannwhitneyu(made2CDD, miss2CDD, alternative='greater')`  
-`stats.mannwhitneyu(made3CDD, miss3CDD, alternative='greater')`  
+`scipy.stats.mannwhitneyu(made2CDD, miss2CDD, alternative='greater')`  
+`scipy.stats.mannwhitneyu(made3CDD, miss3CDD, alternative='greater')`  
 
 | Null Hypothesis                                                                         |   p-value   |
 |-----------------------------------------------------------------------------------------|:-----------:|
