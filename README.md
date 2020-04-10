@@ -134,18 +134,18 @@ To test the hypothesis that the closest defender distance for a made 2 or 3 poin
 
 **Null Hypothesis:** The distance of the closest defender for missed 2 or 3 point shots are equally likely to be higher than for made shots as the other way around, i.e. 
   
-P( Closest Defender Distance for Missed 2 > Closest Defender Distance for Made 2 ) = 0.5  
-P( Closest Defender Distance for Missed 3 > Closest Defender Distance for Made 3 ) = 0.5  
+**P( Closest Defender Distance for Missed 2 > Closest Defender Distance for Made 2 ) = 0.5**  
+**P( Closest Defender Distance for Missed 3 > Closest Defender Distance for Made 3 ) = 0.5**  
   
 Assuming this null hypothesis is true, the rank-sum statistic assumes a known distribution (in this case a skewed normal distribution). The Mann-Whitney u-test compares the number of times a score from one sample is greater than the score from the second sample to determine ranks to test the null hypothesis.  
 
 The sample sizes for these two tests is as followed (in the case the sample sizes are different, the Mann-Whitney u-test will match up the existing pairs):
-| Sample                                        | Sample Size |
-|-----------------------------------------------|:-----------:|
-| Missed 2 Closest Defender Distance (miss2CDD) |    43611    |
-| Made 2 Closest Defender Distance (made2CDD)   |    41174    |
-| Missed 3 Closest Defender Distance (miss3CDD) |    19352    |
-| Made 3 Closest Defender Distance (made3CDD)   |    10940    |
+| Sample                                            | Sample Size |
+|---------------------------------------------------|:-----------:|
+| Closest Defender Distance for Missed 2 (miss2CDD) |    43611    |
+| Closest Defender Distance for Made 2 (made2CDD)   |    41174    |
+| Closest Defender Distance for Missed 3 (miss3CDD) |    19352    |
+| Closest Defender Distance for Made 3 (made3CDD)   |    10940    |
 
 Using the scipy stats package, a Mann-Whitney u-test was run to find the p-values:  
 `stats.mannwhitneyu(made2CDD, miss2CDD, alternative='greater')`  
@@ -167,7 +167,7 @@ The closest defender distance for made shots was greater than for missed shots, 
 
 **To continue with this topic:**
 
-In regards to playing defense in basketball there is much more to analyze than just the distance of the closest defender. Although it may be more difficult to find other data on how a shooter is defended, there is also a lot to understand about what features of a shot lead to the best shot.
+In regards to playing defense in basketball there is much more to analyze than just the distance of the closest defender. Although it may be more difficult to find other data on how a shooter is defended, there is also a lot to understand about what features of a shot lead to the best shot. Maybe after analyzing shot data, there is a way to determine a method to always make the shots taken look like the ones in the gif below. 
 
 <p align="left">
 <img src="images/backboard.gif">
