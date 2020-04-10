@@ -67,8 +67,8 @@ In this dataset, there are 896 unique games with data on shots taken from 281 pl
 |                  | Total Shots         |   2 Point Shots         |  3 Point Shots       |
 |:-----------------|:-------------------:|:-----------------------:|:--------------------:|
 | Count            | 115,235             | 84,877                  | 30,358               |
-| % Made           | 44.3                | 48.6                    | 36.1                 |
-| % Missed         | 53.4                | 51.4                    | 63.9                 |
+| % Made           | 44.3%               | 48.6%                   | 36.1%                |
+| % Missed         | 53.4%               | 51.4%                   | 63.9%                |
 | Most Taken By    | James Harden (985)  | Lamarcus Aldrigde (884) | Stephen Curry (425)  |
 | Most Made By     | Stephen Curry (454) | Nikola Vucevic (419)    | Stephen Curry (181)  |
 | Most Missed By   | James Harden (542)  | Lamarcus Aldridge (493) | Damian Lillard (260) |
